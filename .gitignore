@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+.env
+*.env
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+ansible/*.retry
+*.pem
+*.key

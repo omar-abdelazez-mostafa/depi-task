@@ -1,0 +1,10 @@
+---
+- name: Bootstrap Flask application host
+  hosts: app
+  become: true
+  vars:
+    app_deploy_dir: /opt/flask-app
+    app_user: ubuntu
+  roles:
+    - docker
+    - app_host
