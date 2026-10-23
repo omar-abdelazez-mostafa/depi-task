@@ -1,6 +1,10 @@
 aws_region         = "us-east-1"
-vpc_id             = "vpc-REPLACE_ME"
-subnet_id          = "subnet-REPLACE_ME"
+create_network     = true
+vpc_id             = null
+subnet_id          = null
+vpc_cidr           = "10.42.0.0/16"
+subnet_cidr        = "10.42.1.0/24"
+availability_zone  = "us-east-1a"
 ami_id             = "ami-REPLACE_ME"
 instance_type      = "t3.micro"
 key_name           = "existing-key-pair-name"

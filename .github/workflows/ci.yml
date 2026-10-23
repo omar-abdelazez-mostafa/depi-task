@@ -23,7 +23,11 @@ jobs:
       - name: Run tests with coverage
         run: python -m pytest -v --cov=app --cov-report=xml
       - name: SonarQube scan
+        if: ${{ secrets.SONAR_TOKEN != '' && vars.SONAR_HOST_URL != '' }}
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+      - name: Explain skipped SonarQube scan
+        if: ${{ secrets.SONAR_TOKEN == '' || vars.SONAR_HOST_URL == '' }}
+        run: echo "SonarQube scan skipped; configure SONAR_TOKEN and SONAR_HOST_URL to enable it."

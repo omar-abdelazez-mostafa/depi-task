@@ -12,3 +12,13 @@ output "security_group_id" {
   description = "ID of the application security group."
   value       = module.ec2.security_group_id
 }
+
+output "vpc_id" {
+  description = "VPC used by the application instance."
+  value       = local.vpc_id
+}
+
+output "subnet_id" {
+  description = "Subnet used by the application instance."
+  value       = local.subnet_id
+}
