@@ -6,3 +6,30 @@
     owner: "{{ app_user }}"
     group: "{{ app_user }}"
     mode: "0755"
+
+- name: Copy application source
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../app"
+    dest: "{{ app_deploy_dir }}/"
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    mode: "0755"
+    exclude:
+      - __pycache__
+
+- name: Copy container configuration
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../{{ item }}"
+    dest: "{{ app_deploy_dir }}/{{ item }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    mode: "0644"
+  loop:
+    - Dockerfile
+    - compose.yaml
+    - requirements.txt
+
+- name: Start application with Docker Compose
+  community.docker.docker_compose_v2:
+    project_src: "{{ app_deploy_dir }}"
+    state: present

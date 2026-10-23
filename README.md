@@ -53,9 +53,9 @@ Terraform public IP and private-key path, then run:
 ansible-playbook -i ansible/inventory.ini ansible/playbook.yml
 ```
 
-The playbook installs Docker and the Compose plugin and creates
-`/opt/flask-app`. Run it a second time to verify idempotency on a reachable
-Ubuntu host.
+The playbook installs Docker and the Compose plugin, creates `/opt/flask-app`,
+copies the application, and starts it with Docker Compose. Run it a second time
+to verify idempotency on a reachable Ubuntu host.
 
 ## CI and SonarQube
 
