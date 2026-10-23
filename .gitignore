@@ -12,6 +12,8 @@ venv/
 *.tfstate
 *.tfstate.*
 *.tfplan
+infra/terraform.tfvars
+infra/tfplan
 crash.log
 ansible/*.retry
 ansible/inventory.ini
