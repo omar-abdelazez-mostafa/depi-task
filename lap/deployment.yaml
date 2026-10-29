@@ -1,0 +1,29 @@
+﻿
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  namespace: dev
+  labels:
+    app: web-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: web-app-pod
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: web-app-pod
+    spec:
+      containers:
+        - name: web-app
+          image: nginx:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

@@ -17,8 +17,9 @@ variable "subnet_id" {
 }
 
 variable "ami_id" {
-  description = "Ubuntu AMI ID for the selected AWS region."
+  description = "Ubuntu AMI ID for the selected AWS region. When null, a current Ubuntu Jammy (22.04 LTS) AMI is resolved automatically."
   type        = string
+  default     = null
 }
 
 variable "instance_type" {
