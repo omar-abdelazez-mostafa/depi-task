@@ -1,5 +1,8 @@
 # DevOps Flask Application
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=omar-abdelazez-mostafa_depi-task&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=omar-abdelazez-mostafa_depi-task)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=omar-abdelazez-mostafa_depi-task&metric=coverage)](https://sonarcloud.io/summary/new_code?id=omar-abdelazez-mostafa_depi-task)
+
 Small Flask service with Docker, Terraform, Ansible, and GitHub Actions support.
 
 ## Application
