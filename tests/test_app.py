@@ -1,4 +1,5 @@
 from app import create_app
+from app.main import app as main_app
 
 
 def test_index_returns_expected_response():
@@ -17,3 +18,7 @@ def test_health_returns_healthy_status():
 
     assert response.status_code == 200
     assert response.get_json() == {"status": "healthy"}
+
+
+def test_main_app_instance():
+    assert main_app is not None
