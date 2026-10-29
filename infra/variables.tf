@@ -4,6 +4,12 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+variable "aws_profile" {
+  description = "AWS named CLI profile to use."
+  type        = string
+  default     = "terraform"
+}
+
 variable "vpc_id" {
   description = "Existing VPC ID. Leave null to create a small public VPC."
   type        = string
